@@ -26,6 +26,12 @@
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap JS (necessary for modal functionality) -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -42,12 +48,14 @@
           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:support@postdove.ru">support@postdove.ru</a></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+7 (931) 106-87-38</span></i>
         </div>
+<!-- 
         <div class="social-links d-none d-md-flex align-items-center">
           <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
           <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
           <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
           <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
         </div>
+ -->
       </div>
     </div><!-- End Top Bar -->
 
@@ -99,22 +107,61 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
-            <h1>Welcome to <span>Post Dove</span></h1>
-            <p>Мы предоставляем услуги доставки из США в Россию с 2015 года</p>
-            <div class="d-flex">
-              <a href="#about" class="btn-get-started">Начать</a>
-            </div>
-          </div>
+<!-- Hero Section -->
+<section id="hero" class="hero section light-background">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <!-- Hero Content -->
+      <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+        <h1>Welcome to <span>Post Dove</span></h1>
+        <p>Мы предоставляем корпоративные логистические решения для доставки товаров из США в Россию с 2015 года.</p>
+        <div class="d-flex">
+          <!-- Button to Trigger Modal -->
+          <a href="#" class="btn-get-started" data-bs-toggle="modal" data-bs-target="#requestCallModal">Заказать звонок</a>
         </div>
       </div>
+      <!-- Empty right column to balance layout if needed -->
+      <div class="col-lg-6 order-1 order-lg-2"></div>
+    </div>
+  </div>
+</section><!-- /Hero Section -->
 
-    </section><!-- /Hero Section -->
+<!-- Modal for Request a Call -->
+<div class="modal fade" id="requestCallModal" tabindex="-1" aria-labelledby="requestCallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="requestCallModalLabel">Заказать звонок</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Added Description Text -->
+        <p style="font-size: 14px; color: #555; margin-bottom: 20px;">
+          Окажем консультацию по коммерческим поставкам, таможенным услугам и сопровождению доставки.
+        </p>
+        <form action="form-handler.php" method="post" class="php-email-form">
+          <div class="mb-3">
+            <input type="text" name="phone" class="form-control" id="phone" placeholder="Ваш номер" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" name="comment" rows="4" placeholder="Ваш комментарий" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- /Modal -->
+
+
+
+
+
+
+
+    </section><!-- /Request a Call Section -->
 
     <!-- Featured Services Section -->
     <section id="featured-services" class="featured-services section">
@@ -161,7 +208,7 @@
 
     </section><!-- /Featured Services Section -->
 
-    <!-- About Section -->
+<!-- About Section -->
 <section id="about" class="about section light-background">
 
   <!-- Section Title -->
@@ -180,28 +227,28 @@
 
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <div class="about-content ps-0 ps-lg-3">
-          <h3>Доставка ваших покупок из США в Россию быстро и надежно!</h3>
+          <h3>Надежная доставка товаров из США для вашего бизнеса</h3>
           <p class="fst-italic">
-            Мы — Post Dove, эксперт в доставке товаров из США. Наша миссия — сделать покупки за границей простыми и доступными для всех.
+            Post Dove — эксперт в доставке коммерческих грузов из США. Мы предлагаем профессиональные решения для бизнеса, работающего на маркетплейсах, таких как Wildberries и Ozon.
           </p>
           <ul>
             <li>
               <i class="bi bi-diagram-3"></i>
               <div>
-                <h4>Покупка и доставка из США</h4>
-                <p>Наши специалисты помогут вам приобрести товары из любого магазина США, будь то электроника, одежда или косметика.</p>
+                <h4>Закупка и доставка из США</h4>
+                <p>Наши специалисты помогут вам приобрести и доставить коммерческие товары из любого магазина США, будь то электроника, одежда или специализированное оборудование.</p>
               </div>
             </li>
             <li>
               <i class="bi bi-fullscreen-exit"></i>
               <div>
                 <h4>Удобный сервис и поддержка</h4>
-                <p>Получите виртуальный адрес в безналоговом штате и возможность консолидации посылок для экономии.</p>
+                <p>Мы предоставляем виртуальный адрес в безналоговом штате, а также консолидацию посылок для минимизации ваших затрат.</p>
               </div>
             </li>
           </ul>
           <p>
-            С 2015 года мы доставляем посылки по всей России: Москва, Санкт-Петербург, Новосибирск и многие другие города. Оформляйте заказ с уверенностью, зная, что наши менеджеры всегда на связи для помощи.
+            Мы осуществляем доставку товаров для бизнеса по всей России. Доверьте нам логистику и сосредоточьтесь на развитии своего бизнеса.
           </p>
         </div>
       </div>
@@ -210,6 +257,8 @@
   </div>
 
 </section><!-- /About Section -->
+
+
 
 
     <!-- Skills Section -->
@@ -277,44 +326,51 @@
     </section>
  --><!-- /Skills Section -->
 
-    <!-- Stats Section -->
-    <section id="stats" class="stats section">
+<!-- Stats Section -->
+<section id="stats" class="stats section">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
 
-        <div class="row gy-4">
+    <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-emoji-smile"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Довольных клиентов</p>
-            </div>
-          </div><!-- End Stats Item -->
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-emoji-smile"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Корпоративных клиентов</p>
+        </div>
+      </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-journal-richtext"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Доставок в месяц</p>
-            </div>
-          </div><!-- End Stats Item -->
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-truck"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Тонн грузов доставлено ежемесячно</p>
+        </div>
+      </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-headset"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Часов поддержки</p>
-            </div>
-          </div><!-- End Stats Item -->
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-headset"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Часов клиентской поддержки</p>
+        </div>
+      </div><!-- End Stats Item -->
 
-          <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
-            <i class="bi bi-people"></i>
-            <div class="stats-item">
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p>Сотрудников</p>
-            </div>
-          </div><!-- End Stats Item -->
+      <div class="col-lg-3 col-md-6 d-flex flex-column align-items-center">
+        <i class="bi bi-people"></i>
+        <div class="stats-item">
+          <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
+          <p>Профессиональных сотрудников</p>
+        </div>
+      </div><!-- End Stats Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Stats Section -->
+
 
         </div>
 
@@ -377,7 +433,7 @@
 
     </section><!-- /Clients Section -->
 
-   <!-- Services Section -->
+<!-- Services Section -->
 <section id="services" class="services section">
 
   <!-- Section Title -->
@@ -398,35 +454,23 @@
           <a href="#" class="stretched-link">
             <h3>Доставка товаров из США</h3>
           </a>
-          <p>Мы занимаемся доставкой товаров из США в Россию с 2015 года. Наши клиенты всегда получают свои посылки, интернет-заказы и коммерческие грузы вовремя.</p>
+          <p>Мы обеспечиваем быструю и надежную доставку коммерческих грузов из США в Россию. Независимо от типа товара, вы можете рассчитывать на своевременную доставку по любому адресу в РФ.</p>
         </div>
       </div><!-- End Service Item -->
 
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon">
-            <i class="bi bi-cart"></i>
-          </div>
-          <a href="#" class="stretched-link">
-            <h3>Шоппинг без границ</h3>
-          </a>
-          <p>С нами вы можете делать покупки в любом магазине США, не выходя из дома. Оформляйте заказы через наш сервис-посредник и наслаждайтесь свободой выбора.</p>
-        </div>
-      </div><!-- End Service Item -->
-
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-laptop"></i>
+            <i class="bi bi-box-seam"></i>
           </div>
           <a href="#" class="stretched-link">
             <h3>Доставка электроники</h3>
           </a>
-          <p>Хотите приобрести технику из США? Мы поможем вам купить и доставить устройства, такие как iPhone и MacBook, из официальных магазинов Apple.</p>
+          <p>Мы поможем вам приобрести и доставить в Россию высокотехнологичное оборудование и электронику, включая устройства Apple, такие как iPhone и MacBook, напрямую из официальных магазинов.</p>
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-person"></i>
@@ -434,19 +478,31 @@
           <a href="#" class="stretched-link">
             <h3>Доставка одежды и аксессуаров</h3>
           </a>
-          <p>Мы доставляем оригинальную одежду и обувь от таких брендов, как Ralph Lauren, Victoria's Secret, Calvin Klein, Guess, Michael Kors и Nike по адекватной цене.</p>
+          <p>Мы доставляем брендированную одежду, обувь и аксессуары от таких именитых производителей, как Ralph Lauren, Victoria's Secret, Calvin Klein и других, гарантируя подлинность и своевременность поставки.</p>
+        </div>
+      </div><!-- End Service Item -->
+
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon">
+            <i class="bi bi-gift"></i>
+          </div>
+          <a href="#" class="stretched-link">
+            <h3>Доставка товаров для маркетплейсов</h3>
+          </a>
+          <p>Мы предлагаем профессиональные логистические решения для продавцов на маркетплейсах, таких как Wildberries и Ozon, помогая расширить ассортимент и повысить эффективность бизнеса.</p>
         </div>
       </div><!-- End Service Item -->
 
       <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="icon">
-            <i class="bi bi-gift"></i>
+            <i class="bi bi-layers"></i>
           </div>
           <a href="#" class="stretched-link">
-            <h3>Игрушки, косметика и парфюмерия</h3>
+            <h3>Консолидация и оптимизация посылок</h3>
           </a>
-          <p>Выберите любые товары, будь то игрушки, косметика или парфюмерия. Мы гарантируем комфортный шоппинг без скопления людей.</p>
+          <p>Мы предоставляем услуги по консолидации посылок, что позволяет снизить затраты на доставку, а также уменьшаем вес посылок, убирая излишнюю упаковку от производителя.</p>
         </div>
       </div><!-- End Service Item -->
 
@@ -456,11 +512,18 @@
             <i class="bi bi-headset"></i>
           </div>
           <a href="#" class="stretched-link">
-            <h3>Поддержка и помощь</h3>
+            <h3>Поддержка и консультации</h3>
           </a>
-          <p>Если у вас возникнут трудности с покупкой в магазинах США, наши менеджеры всегда готовы помочь и выкупить ваши заказы.</p>
+          <p>Наши эксперты всегда готовы предоставить консультации по вопросам доставки, таможенного оформления и другим логистическим вопросам, связанным с импортом товаров из США.</p>
         </div>
       </div><!-- End Service Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Services Section -->
+
 
     </div>
 
@@ -786,15 +849,13 @@
     </section><!~~ /Team Section ~~>
  -->
 
-    <!-- Pricing Section -->
-<section id="pricing" class="pricing section">
+<!-- 
+    Pricing Section<section id="pricing" class="pricing section">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
+  Section Title  <div class="container section-title" data-aos="fade-up">
     <h2>Тарифы</h2>
     <p><span>Узнайте наши</span> <span class="description-title">Тарифы</span></p>
-  </div><!-- End Section Title -->
-
+  </div>End Section Title
   <div class="container">
 
     <div class="row gy-3">
@@ -807,8 +868,7 @@
             <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
         </div>
-      </div><!-- End Pricing Item -->
-
+      </div>End Pricing Item
       <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
         <div class="pricing-item">
           <h3>Тариф x 1.4</h3>
@@ -817,8 +877,7 @@
             <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
         </div>
-      </div><!-- End Pricing Item -->
-
+      </div>End Pricing Item
       <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
         <div class="pricing-item">
           <h3>Тариф x 1.5</h3>
@@ -827,8 +886,7 @@
             <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
         </div>
-      </div><!-- End Pricing Item -->
-
+      </div>End Pricing Item
       <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
         <div class="pricing-item">
           <h3>Тариф x 1.7</h3>
@@ -837,8 +895,7 @@
             <a href="#" class="btn-buy">Узнать подробнее</a>
           </div>
         </div>
-      </div><!-- End Pricing Item -->
-
+      </div>End Pricing Item
     </div>
 
 
@@ -847,7 +904,8 @@
 
   </div>
 
-</section><!-- /Pricing Section -->
+</section>/Pricing Section
+ -->
 
 
     <!-- Faq Section -->
@@ -870,7 +928,7 @@
 <div class="faq-item faq-active">
   <h3>Когда прибудет моя посылка?</h3>
   <div class="faq-content">
-    <p>Вы можете отслеживать актуальный статус вашей посылки в личном кабинете в разделе «Посылки». Сроки доставки авиапочтой составляют от 12 до 18 дней. Как только посылка пересечет границу, статус в вашем личном кабинете будет обновлен.</p>
+    <p>Вы можете отслеживать актуальный статус вашей посылки в личном кабинете, в разделе «Посылки». Сроки доставки авиапочтой обычно составляют от 12 до 18 дней. После пересечения границы, статус посылки будет обновлен в вашем личном кабинете, что позволит вам быть в курсе всех этапов доставки.</p>
   </div>
   <i class="faq-toggle bi bi-chevron-right"></i>
 </div><!-- End Faq item-->
@@ -878,15 +936,55 @@
 <div class="faq-item">
   <h3>Кто такой получатель и почему это важно?</h3>
   <div class="faq-content">
-    <p>Получатель — это лицо, на которое оформляются таможенные документы для прохождения таможенного контроля. Важно помнить о таможенном лимите в 1000 евро; указание разных получателей позволяет получать несколько посылок в рамках этого лимита. Если посылка задержана на таможне, необходимо предоставить копии документов получателя.</p>
+    <p>Получатель — это лицо, на которое оформляются все таможенные документы для прохождения контроля. Это важно для соблюдения таможенных лимитов и упрощения процесса доставки. В случае задержки посылки на таможне, может потребоваться предоставление копий документов получателя.</p>
   </div>
   <i class="faq-toggle bi bi-chevron-right"></i>
 </div><!-- End Faq item-->
 
 <div class="faq-item">
-  <h3>Какие дополнительные услуги доступны и какова их стоимость?</h3>
+  <h3>Можете ли вы помочь купить товар, если магазин не принимает мою карту?</h3>
   <div class="faq-content">
-    <p>Мы предлагаем ряд дополнительных услуг для вашего удобства. Консолидация и расконсолидация посылок предоставляются бесплатно, так же как и прием посылок в безналоговом штате. Если вам требуется проверить посылку, мы предлагаем услугу, которая включает в себя несколько фотографий и проверку работоспособности товара за 3$. В случае необходимости возврата посылки в магазин, эта услуга стоит 5$. Все эти опции созданы для обеспечения максимального удобства и безопасности ваших покупок.</p>
+    <p>Если у вас возникли трудности с оплатой заказа, наши менеджеры могут помочь с покупкой товара. Для получения этой услуги, свяжитесь с нами через личный кабинет или чат на сайте. Условия и комиссии уточняйте у менеджера.</p>
+  </div>
+  <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
+
+<div class="faq-item">
+  <h3>Как вернуть трек-код продавцу?</h3>
+  <div class="faq-content">
+    <p>Если вы хотите вернуть товар продавцу, вы можете инициировать возврат через личный кабинет, выбрав соответствующий трек и добавив Return label в поле инвойса. Для получения дополнительной информации, свяжитесь с нашим менеджером. Учтите, что услуга доступна до момента упаковки трека на складе.</p>
+  </div>
+  <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
+
+<div class="faq-item">
+  <h3>Какими дополнительными услугами можно воспользоваться?</h3>
+  <div class="faq-content">
+    <p>Мы предлагаем широкий спектр дополнительных услуг, включая консолидацию и расконсолидацию посылок, прием треков в безналоговом штате, а также проверку и возврат товаров. Подробности и стоимость услуг вы можете уточнить у нашего менеджера.</p>
+  </div>
+  <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
+
+<div class="faq-item">
+  <h3>Сколько времени треки хранятся бесплатно на складе в США?</h3>
+  <div class="faq-content">
+    <p>Треки хранятся на нашем складе в США бесплатно в течение определенного периода. Если требуется дополнительное хранение, это возможно на условиях, которые вы можете уточнить у нашего менеджера. Мы всегда стремимся к гибкости и удобству наших клиентов.</p>
+  </div>
+  <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
+
+<div class="faq-item">
+  <h3>В посылке не хватает товара, что мне делать?</h3>
+  <div class="faq-content">
+    <p>Если в вашей посылке отсутствует товар, откройте чат на нашем сайте и укажите номер посылки, декларации и выкупа (если применимо). Мы оперативно проверим все данные и предложим вам решение ситуации. Мы стремимся к обеспечению полной безопасности и защиты ваших интересов.</p>
+  </div>
+  <i class="faq-toggle bi bi-chevron-right"></i>
+</div><!-- End Faq item-->
+
+<div class="faq-item">
+  <h3>Почему статус “Доставлен на склад” не обновляется?</h3>
+  <div class="faq-content">
+    <p>Статус "Доставлен на склад" может иногда задерживаться из-за специфики работы складов и доставки. Если статус долго не обновляется, свяжитесь с нами. Мы поддерживаем тесное взаимодействие с почтовыми службами, чтобы обеспечить своевременное и точное обновление информации.</p>
   </div>
   <i class="faq-toggle bi bi-chevron-right"></i>
 </div><!-- End Faq item-->
@@ -1061,6 +1159,7 @@
       </ul>
     </div>
 
+<!-- 
     <div class="col-lg-4 col-md-12">
       <h4>Подписывайтесь на нас</h4>
       <p>Следите за нашими новостями и обновлениями в социальных сетях.</p>
@@ -1071,6 +1170,7 @@
         <a href="#"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
+ -->
 
   </div>
 </div>
