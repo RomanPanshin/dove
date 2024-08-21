@@ -33,6 +33,38 @@
 <!-- Bootstrap JS (necessary for modal functionality) -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
 
+ <style>
+.navmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navmenu ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navmenu li {
+  margin-right: 20px; /* Adjusts space between menu items */
+}
+
+.account-link {
+  display: inline-block;
+}
+
+.account-icon {
+  width: 30px; /* Adjust the width as needed to make it larger */
+  height: auto;
+  margin-left: 20px; /* Adds space between the last menu item and the icon */
+  vertical-align: middle;
+}
+
+
+ </style>
+
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -46,17 +78,15 @@
  <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:support@postdove.ru">support@postdove.ru</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+7 (931) 106-87-38</span></i>
+<!--           <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:support@postdove.ru">support@postdove.ru</a></i> -->
+          <i class="bi bi-telegram d-flex align-items-center ms-4">
+    <a href="https://t.me/PostDove" target="_blank" class="d-flex align-items-center text-decoration-none">
+        <span>@PostDove</span>
+    </a>
+</i>
+
         </div>
-<!-- 
-        <div class="social-links d-none d-md-flex align-items-center">
-          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-        </div>
- -->
+
       </div>
     </div><!-- End Top Bar -->
 
@@ -69,36 +99,20 @@
           <h1 class="sitename">Post Dove</h1>
         </a>
 
- <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Главная</a></li>
-            <li><a href="#about">О нас</a></li>
-            <li><a href="#services">Услуги</a></li>
-            <li><a href="#portfolio">Портфолио</a></li>
-            <li><a href="#team">Команда</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i
-                      class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
+<nav id="navmenu" class="navmenu d-flex align-items-center">
+  <ul class="d-flex align-items-center">
+    <li><a href="#hero" class="active">Главная</a></li>
+    <li><a href="#about">О нас</a></li>
+    <li><a href="#services">Услуги</a></li>
+    <li><a href="#contact">Контакты</a></li>
+  </ul>
+  <a href="#account" class="account-link">
+    <img src="assets/img/account.png" class="account-icon" alt="Account">
+  </a>
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
 
-            <li><a href="#contact">Контакты</a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
+
 
       </div>
 
@@ -115,10 +129,11 @@
       <!-- Hero Content -->
       <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
         <h1>Welcome to <span>Post Dove</span></h1>
-        <p>Мы предоставляем корпоративные логистические решения для доставки товаров из США в Россию с 2015 года.</p>
+        <p>Мы доставляем коммерческие грузы с таможенной очисткой из США в Россию с 2015 года.</p>
         <div class="d-flex">
           <!-- Button to Trigger Modal -->
-          <a href="#" class="btn-get-started" data-bs-toggle="modal" data-bs-target="#requestCallModal">Заказать звонок</a>
+         <a href="#" class="btn-get-started btn btn-lg" data-bs-toggle="modal" data-bs-target="#requestCallModal">Заказать звонок</a>
+
         </div>
       </div>
       <!-- Empty right column to balance layout if needed -->
@@ -170,20 +185,19 @@
       <div class="container">
 
         <div class="row gy-4">
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-activity icon"></i></div>
-              <h4><a href="" class="stretched-link">Окажем экспертную консультацию</a></h4>
-              <p>по шоппингу, доставке, таможенным услугам</p>
-            </div>
-          </div><!-- End Service Item -->
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-activity icon"></i></div>
+    <h4><a href="" class="stretched-link">Окажем экспертную консультацию</a></h4>
+    <p>по выкупу товара, логистике, таможенной очистке</p>
+  </div>
+</div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="service-item position-relative">
               <div class="icon"><i class="bi bi-bounding-box-circles icon"></i></div>
               <h4><a href="" class="stretched-link">Предоставим адрес</a></h4>
-              <p>в безналоговом штате США</p>
+              <p>в безналоговом штате Делавэр</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -195,13 +209,14 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="bi bi-broadcast icon"></i></div>
-              <h4><a href="" class="stretched-link">Будем хранить посылки</a></h4>
-              <p>бесплатное хранения на складе до 40 дней</p>
-            </div>
-          </div><!-- End Service Item -->
+<div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+  <div class="service-item position-relative">
+    <div class="icon"><i class="bi bi-broadcast icon"></i></div>
+    <h4><a href="" class="stretched-link">Консолидация посылок</a></h4>
+    <p>поможем сформировать одну посылку из разных грузов, снизив вес за счет оптимальной упаковки.</p>
+  </div>
+</div><!-- End Service Item -->
+
 
         </div>
 
@@ -211,6 +226,8 @@
 
 <!-- About Section -->
 <section id="about" class="about section light-background">
+
+ <section id="about" class="about section light-background">
 
   <!-- Section Title -->
   <div class="container section-title" data-aos="fade-up">
@@ -229,22 +246,22 @@
       <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
         <div class="about-content ps-0 ps-lg-3">
           <h3>Надежная доставка товаров из США для вашего бизнеса</h3>
-          <p class="fst-italic">
-            Post Dove — эксперт в доставке коммерческих грузов из США. Мы предлагаем профессиональные решения для бизнеса, работающего на маркетплейсах, таких как Wildberries и Ozon.
+          <p>
+            Команда Post Dove является профессионалами в сфере логистики из США. Мы предлагаем решения для вашего бизнеса в организации.
           </p>
           <ul>
             <li>
               <i class="bi bi-diagram-3"></i>
               <div>
                 <h4>Закупка и доставка из США</h4>
-                <p>Наши специалисты помогут вам приобрести и доставить коммерческие товары из любого магазина США, будь то электроника, одежда или специализированное оборудование.</p>
+                <p>Наши специалисты помогут вам приобрести и доставить коммерческие товары из любого магазина США, будь то электроника, одежда или специализированное оборудование. Все риски застрахованы.</p>
               </div>
             </li>
             <li>
               <i class="bi bi-fullscreen-exit"></i>
               <div>
                 <h4>Удобный сервис и поддержка</h4>
-                <p>Мы предоставляем виртуальный адрес в безналоговом штате, а также консолидацию посылок для минимизации ваших затрат.</p>
+                <p>Мы предоставляем виртуальный адрес в безналоговом штате, а также консолидацию посылок для минимизации ваших затрат. </p>
               </div>
             </li>
           </ul>
@@ -261,71 +278,6 @@
 
 
 
-
-    <!-- Skills Section -->
-    <!-- 
-<section id="skills" class="skills section">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row skills-content skills-animation">
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>HTML</span> <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-            <div class="progress">
-              <span class="skill"><span>CSS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-            <div class="progress">
-              <span class="skill"><span>JavaScript</span> <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="progress">
-              <span class="skill"><span>PHP</span> <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-            <div class="progress">
-              <span class="skill"><span>WordPress/CMS</span> <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-            <div class="progress">
-              <span class="skill"><span>Photoshop</span> <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div><!~~ End Skills Item ~~>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
- --><!-- /Skills Section -->
 
 <!-- Stats Section -->
 <section id="stats" class="stats section">
@@ -447,7 +399,7 @@
 
     <div class="row gy-4">
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-4 col-md-6"  data-aos-delay="100">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-airplane"></i>
@@ -459,7 +411,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-4 col-md-6"  data-aos-delay="200">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-box-seam"></i>
@@ -471,19 +423,20 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="service-item position-relative">
-          <div class="icon">
-            <i class="bi bi-person"></i>
-          </div>
-          <a href="#" class="stretched-link">
-            <h3>Доставка одежды и аксессуаров</h3>
-          </a>
-          <p>Мы доставляем брендированную одежду, обувь и аксессуары от таких именитых производителей, как Ralph Lauren, Victoria's Secret, Calvin Klein и других, гарантируя подлинность и своевременность поставки.</p>
-        </div>
-      </div><!-- End Service Item -->
+<div class="col-lg-4 col-md-6"  data-aos-delay="300">
+  <div class="service-item position-relative">
+    <div class="icon">
+      <i class="bi bi-person"></i>
+    </div>
+    <a href="#" class="stretched-link">
+      <h3>Заключение контрактов с поставщиками</h3>
+    </a>
+    <p>Мы можем связаться с поставщиками и заключить договор на нашу американскую компанию, гарантируя подлинность и своевременность поставки.</p>
+  </div>
+</div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+
+      <div class="col-lg-4 col-md-6"  data-aos-delay="400">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-gift"></i>
@@ -495,7 +448,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+      <div class="col-lg-4 col-md-6"  data-aos-delay="500">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-layers"></i>
@@ -507,7 +460,7 @@
         </div>
       </div><!-- End Service Item -->
 
-      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+      <div class="col-lg-4 col-md-6"  data-aos-delay="600">
         <div class="service-item position-relative">
           <div class="icon">
             <i class="bi bi-headset"></i>
@@ -526,655 +479,29 @@
 </section><!-- /Services Section -->
 
 
-    </div>
 
-  </div>
-
-</section><!-- /Services Section -->
-
-
-    <!-- Testimonials Section -->
-<!-- 
-    <section id="testimonials" class="testimonials section dark-background">
-
-      <img src="assets/img/testimonials-bg.jpg" class="testimonials-bg" alt="">
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!~~ End testimonial item ~~>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!~~ End testimonial item ~~>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!~~ End testimonial item ~~>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!~~ End testimonial item ~~>
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  <i class="bi bi-quote quote-icon-left"></i>
-                  <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                  <i class="bi bi-quote quote-icon-right"></i>
-                </p>
-              </div>
-            </div><!~~ End testimonial item ~~>
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!~~ /Testimonials Section ~~>
- -->
-<!-- 
-
-    Portfolio Section    <section id="portfolio" class="portfolio section">
-
-      Section Title      <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p><span>Check Our&nbsp;</span> <span class="description-title">Portfolio</span></p>
-      </div>End Section Title
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-product">Card</li>
-            <li data-filter=".filter-branding">Web</li>
-          </ul>End Portfolio Filters
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-1.jpg" title="App 1" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-2.jpg" title="Product 1" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 1</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-3.jpg" title="Branding 1" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-4.jpg" title="App 2" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-5.jpg" title="Product 2" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 2</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-6.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>App 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-7.jpg" title="App 3" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Product 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-8.jpg" title="Product 3" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-              <img src="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Branding 3</h4>
-                <p>Lorem ipsum, dolor sit</p>
-                <a href="assets/img/masonry-portfolio/masonry-portfolio-9.jpg" title="Branding 2" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>End Portfolio Item
-          </div>End Portfolio Container
-        </div>
-
-      </div>
-
-    </section>/Portfolio Section
- -->
-    <!-- Team Section -->
-<!-- 
-    <section id="team" class="team section light-background">
-
-      <!~~ Section Title ~~>
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Team</h2>
-        <p><span>Our Hardworking</span> <span class="description-title">Team</span></p>
-      </div><!~~ End Section Title ~~>
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div>
- -->
-
-         <!-- 
- <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!~~ End Team Member ~~>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!~~ End Team Member ~~>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div><!~~ End Team Member ~~>
-
-        </div>
-
-      </div>
-
-    </section><!~~ /Team Section ~~>
- -->
-
-<!-- 
-    Pricing Section<section id="pricing" class="pricing section">
-
-  Section Title  <div class="container section-title" data-aos="fade-up">
-    <h2>Тарифы</h2>
-    <p><span>Узнайте наши</span> <span class="description-title">Тарифы</span></p>
-  </div>End Section Title
-  <div class="container">
-
-    <div class="row gy-3">
-
-      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-        <div class="pricing-item">
-          <h3>Стандартный Тариф</h3>
-          <p>Для всех посылок, если объемный вес не превышает фактический в два раза и более.</p>
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Узнать подробнее</a>
-          </div>
-        </div>
-      </div>End Pricing Item
-      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-        <div class="pricing-item">
-          <h3>Тариф x 1.4</h3>
-          <p>Применяется, если объемный вес посылки в 2 раза больше фактического.</p>
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Узнать подробнее</a>
-          </div>
-        </div>
-      </div>End Pricing Item
-      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
-        <div class="pricing-item">
-          <h3>Тариф x 1.5</h3>
-          <p>Применяется, если объемный вес посылки в 2.5 раза больше фактического.</p>
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Узнать подробнее</a>
-          </div>
-        </div>
-      </div>End Pricing Item
-      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
-        <div class="pricing-item">
-          <h3>Тариф x 1.7</h3>
-          <p>Применяется, если объемный вес посылки в 3 раза больше фактического.</p>
-          <div class="btn-wrap">
-            <a href="#" class="btn-buy">Узнать подробнее</a>
-          </div>
-        </div>
-      </div>End Pricing Item
-    </div>
-
-
-
-    </div>
-
-  </div>
-
-</section>/Pricing Section
- -->
-
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section light-background">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>F.A.Q</h2>
-        <p><span>Частые вопросы</span> <span class="description-title">Questions</span></p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-<div class="faq-item faq-active">
-  <h3>Когда прибудет моя посылка?</h3>
-  <div class="faq-content">
-    <p>Вы можете отслеживать актуальный статус вашей посылки в личном кабинете, в разделе «Посылки». Сроки доставки авиапочтой обычно составляют от 12 до 18 дней. После пересечения границы, статус посылки будет обновлен в вашем личном кабинете, что позволит вам быть в курсе всех этапов доставки.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Кто такой получатель и почему это важно?</h3>
-  <div class="faq-content">
-    <p>Получатель — это лицо, на которое оформляются все таможенные документы для прохождения контроля. Это важно для соблюдения таможенных лимитов и упрощения процесса доставки. В случае задержки посылки на таможне, может потребоваться предоставление копий документов получателя.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Можете ли вы помочь купить товар, если магазин не принимает мою карту?</h3>
-  <div class="faq-content">
-    <p>Если у вас возникли трудности с оплатой заказа, наши менеджеры могут помочь с покупкой товара. Для получения этой услуги, свяжитесь с нами через личный кабинет или чат на сайте. Условия и комиссии уточняйте у менеджера.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Как вернуть трек-код продавцу?</h3>
-  <div class="faq-content">
-    <p>Если вы хотите вернуть товар продавцу, вы можете инициировать возврат через личный кабинет, выбрав соответствующий трек и добавив Return label в поле инвойса. Для получения дополнительной информации, свяжитесь с нашим менеджером. Учтите, что услуга доступна до момента упаковки трека на складе.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Какими дополнительными услугами можно воспользоваться?</h3>
-  <div class="faq-content">
-    <p>Мы предлагаем широкий спектр дополнительных услуг, включая консолидацию и расконсолидацию посылок, прием треков в безналоговом штате, а также проверку и возврат товаров. Подробности и стоимость услуг вы можете уточнить у нашего менеджера.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Сколько времени треки хранятся бесплатно на складе в США?</h3>
-  <div class="faq-content">
-    <p>Треки хранятся на нашем складе в США бесплатно в течение определенного периода. Если требуется дополнительное хранение, это возможно на условиях, которые вы можете уточнить у нашего менеджера. Мы всегда стремимся к гибкости и удобству наших клиентов.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>В посылке не хватает товара, что мне делать?</h3>
-  <div class="faq-content">
-    <p>Если в вашей посылке отсутствует товар, откройте чат на нашем сайте и укажите номер посылки, декларации и выкупа (если применимо). Мы оперативно проверим все данные и предложим вам решение ситуации. Мы стремимся к обеспечению полной безопасности и защиты ваших интересов.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-<div class="faq-item">
-  <h3>Почему статус “Доставлен на склад” не обновляется?</h3>
-  <div class="faq-content">
-    <p>Статус "Доставлен на склад" может иногда задерживаться из-за специфики работы складов и доставки. Если статус долго не обновляется, свяжитесь с нами. Мы поддерживаем тесное взаимодействие с почтовыми службами, чтобы обеспечить своевременное и точное обновление информации.</p>
-  </div>
-  <i class="faq-toggle bi bi-chevron-right"></i>
-</div><!-- End Faq item-->
-
-
-
-          </div><!-- End Faq Column-->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-   <!-- Contact Section -->
-<section id="contact" class="contact section">
-
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Контакты</h2>
-    <p><span>Нужна помощь?</span> <span class="description-title">Свяжитесь с нами</span></p>
-  </div><!-- End Section Title -->
-
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-    <div class="row gy-4">
-
-      <div class="col-lg-5">
-
-        <div class="info-wrap">
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-geo-alt flex-shrink-0"></i>
-            <div>
-              <h3>Адрес в США</h3>
-              <p>609 Carson Dr, Bear, DE 19701, United States</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <i class="bi bi-telephone flex-shrink-0"></i>
-            <div>
-              <h3>Позвоните нам в США</h3>
-              <p>+1 (302) 784-9337</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-            <i class="bi bi-telephone flex-shrink-0"></i>
-            <div>
-              <h3>Позвоните нам в России</h3>
-              <p>+7 (931) 106-87-38</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <i class="bi bi-envelope flex-shrink-0"></i>
-            <div>
-              <h3>Электронная почта</h3>
-              <p>support@postdove.ru</p>
-            </div>
-          </div><!-- End Info Item -->
-
-<!--           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.9117603976238!2d-75.69258422380376!3d39.60940097158076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c707bd8da0a61f%3A0xbf5baad1324ee43d!2zNjA5IENhcnNvbiBEciwgQmVhciwgREUgMTk3MDEsINCh0KjQkA!5e1!3m2!1sru!2sru!4v1723051340968!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3281.9117603976238!2d-75.69258422380376!3d39.60940097158076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c707bd8da0a61f%3A0xbf5baad1324ee43d!2zNjA5IENhcnNvbiBEciwgQmVhciwgREUgMTk3MDEsINCh0KjQkA!5e1!3m2!1sru!2sru!4v1723051340968!5m2!1sru!2sru" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-      </div>
-
-      <div class="col-lg-7">
-        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <label for="name-field" class="pb-2">Ваше имя</label>
-              <input type="text" name="name" id="name-field" class="form-control" required="">
-            </div>
-
-            <div class="col-md-6">
-              <label for="email-field" class="pb-2">Ваш Email</label>
-              <input type="email" class="form-control" name="email" id="email-field" required="">
-            </div>
-
-            <div class="col-md-12">
-              <label for="subject-field" class="pb-2">Тема</label>
-              <input type="text" class="form-control" name="subject" id="subject-field" required="">
-            </div>
-
-            <div class="col-md-12">
-              <label for="message-field" class="pb-2">Сообщение</label>
-              <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
-            </div>
-
-            <div class="col-md-12 text-center">
-              <div class="loading">Загрузка</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Ваше сообщение отправлено. Спасибо!</div>
-
-              <button type="submit">Отправить сообщение</button>
-            </div>
-
-          </div>
-        </form>
-      </div><!-- End Contact Form -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Contact Section -->
-
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
 
   </main>
 
   <footer id="footer" class="footer">
 
-<!-- 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
- -->
-
-  <div class="container footer-top">
+<div class="container footer-top">
   <div class="row gy-4">
     <div class="col-lg-4 col-md-6 footer-about">
       <a href="index.html" class="d-flex align-items-center">
         <span class="sitename">Post Dove</span>
       </a>
       <div class="footer-contact pt-3">
-        <p>609 Carson Dr</p>
-        <p>Bear, DE 19701, United States</p>
-        <p class="mt-3"><strong>Phone (USA):</strong> <span>+1 (302) 784-9337</span></p>
-        <p><strong>Phone (Russia):</strong> <span>+7 (931) 106-87-38</span></p>
-        <p><strong>Email:</strong> <span>support@postdove.ru</span></p>
+        <p><strong>Telegram:</strong> 
+          <a href="https://t.me/PostDove" target="_blank" class="d-flex align-items-center text-decoration-none">
+            <i class="bi bi-telegram"></i> <span class="ms-2">@PostDove</span>
+          </a>
+        </p>
       </div>
     </div>
-
-    <div class="col-lg-2 col-md-3 footer-links">
-      <h4>Полезные ссылки</h4>
-      <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Главная</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">О нас</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Услуги</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Условия обслуживания</a></li>
-      </ul>
-    </div>
-
-    <div class="col-lg-2 col-md-3 footer-links">
-      <h4>Наши услуги</h4>
-      <ul>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Доставка из США</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Покупка товаров</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Консолидация посылок</a></li>
-        <li><i class="bi bi-chevron-right"></i> <a href="#">Шоппинг-сопровождение</a></li>
-      </ul>
-    </div>
-
-<!-- 
-    <div class="col-lg-4 col-md-12">
-      <h4>Подписывайтесь на нас</h4>
-      <p>Следите за нашими новостями и обновлениями в социальных сетях.</p>
-      <div class="social-links d-flex">
-        <a href="#"><i class="bi bi-twitter"></i></a>
-        <a href="#"><i class="bi bi-facebook"></i></a>
-        <a href="#"><i class="bi bi-instagram"></i></a>
-        <a href="#"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
- -->
-
   </div>
 </div>
+
 
 <div class="container copyright text-center mt-4">
   <p>© <span>Copyright</span> <strong class="px-1 sitename">Post Dove</strong> <span>Все права защищены</span></p>
